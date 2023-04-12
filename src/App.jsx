@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import api from "./api";
 import "./App.css";
-import { Card, CardContent, Typography, Skeleton, Button } from "@mui/material";
+import { Card, CardContent, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Header from "./components/Header";
-import CardFlotant from "./components/cardFlotant";
+import CardFlotant from "./components/CardFlotant";
 import Loading from "./components/Loading";
 
 function App() {

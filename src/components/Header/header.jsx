@@ -1,5 +1,3 @@
-import React from "react";
-
 function headerStyles() {
   const headerContainer = {
     background: "none",

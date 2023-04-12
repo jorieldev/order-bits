@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Skeleton, Button } from "@mui/material";
+import { CardContent, Typography, Button } from "@mui/material";
 
 const CardFlotant = ({ inf, handleBack }) => {
   const {
