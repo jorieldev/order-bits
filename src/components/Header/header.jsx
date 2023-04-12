@@ -37,14 +37,14 @@ function headerStyles() {
     display: "flex",
     flexDirection: "column",
     position: "absolute",
-    right: "50px",
+    right: "60px",
     top: "40px",
     gap: "40px",
   };
 
   const headerIcons = {
-    width: "40px",
-    height: "40px",
+    width: "55px",
+    height: "55px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
