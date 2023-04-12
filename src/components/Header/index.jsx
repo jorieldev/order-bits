@@ -9,9 +9,9 @@ export default function Header() {
   const styles = headerStyles();
   const nativeShare = (e) => {
     e.preventDefault();
-    if (e.target.tagName === "svg") {
+    if (e.target.id !== "Share") {
       window.open(
-        "https://api.whatsapp.com/send?phone=+543625293002",
+        "https://web.whatsapp.com/send?phone=5436252930020&text=Hola,%20tengo%20una%20consulta",
         "_blank"
       );
     } else {
@@ -29,10 +29,14 @@ export default function Header() {
       </Card>
       <div style={styles.headerIconsContainer}>
         <div style={styles.headerIcons}>
-          <ShareIcon sx={{ color: "#fff" }} onClick={nativeShare} />
+          <ShareIcon sx={{ color: "#fff" }} onClick={nativeShare} id="Share" />
         </div>
         <div style={styles.headerIcons}>
-          <WhatsAppIcon sx={{ color: "#fff" }} onClick={nativeShare} />
+          <WhatsAppIcon
+            sx={{ color: "#fff" }}
+            id="WhatsApp"
+            onClick={nativeShare}
+          />
         </div>
       </div>
     </Card>
