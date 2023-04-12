@@ -23,11 +23,15 @@ function App() {
     setLoading(true);
     setError(false);
     const ordersAll = await api.orders.fetch();
-    setInf(
-      (await ordersAll?.filter((o) => o.Orden === order)[0]) ?? {
-        Tematica: "No existe este pedido",
-      }
-    );
+    if (order !== "") {
+      setInf(
+        (await ordersAll?.filter((o) => o.Orden === order)[0]) ?? {
+          Tematica: "No existe este pedido",
+        }
+      );
+    } else {
+      error(true);
+    }
   };
 
   const handleBack = () => {
