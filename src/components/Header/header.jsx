@@ -48,6 +48,7 @@ function headerStyles() {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    zIndex: "99",
   };
 
   return {
