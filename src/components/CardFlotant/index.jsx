@@ -10,6 +10,7 @@ const CardFlotant = ({ inf, handleBack }) => {
     Tematica,
     Finalizado,
     Envio,
+    Horario,
   } = inf;
   return (
     <>
@@ -31,14 +32,16 @@ const CardFlotant = ({ inf, handleBack }) => {
             ? "Pedido pago"
             : `Su saldo a pagar es: $${parseInt(Total) - parseInt(Seña)}`}
         </Typography>
-        {Envio && (
+        {(Envio || Horario) && (
           <Typography
             variant="h6"
             component="h6"
             style={{ color: "#e6d5b8", marginBottom: "10px" }}
           >
             {" "}
-            Se envia a tu casa
+            {Horario
+              ? `Se podra retirar en el horario de ${Horario}.`
+              : "Se envia a tu casa"}
           </Typography>
         )}
         <Button variant="contained" onClick={handleBack}>

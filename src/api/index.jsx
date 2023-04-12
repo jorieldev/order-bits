@@ -24,6 +24,7 @@ const api = {
           Orden: value.Orden,
           Tematica: value.Tematica,
           Envio: value.Envio,
+          Horario: value.Horario,
         };
         return obj;
       });
