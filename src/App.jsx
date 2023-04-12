@@ -70,6 +70,7 @@ function App() {
                         event.target.value?.match(/[1-9]/g)?.join("")
                       )
                     }
+                    value={order}
                   />
                 </CardContent>
                 {error && (
