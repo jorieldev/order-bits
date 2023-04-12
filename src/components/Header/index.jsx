@@ -11,7 +11,7 @@ export default function Header() {
     e.preventDefault();
     if (e.target.id !== "Share") {
       window.open(
-        "https://web.whatsapp.com/send?phone=5436252930020&text=Hola,%20tengo%20una%20consulta",
+        "https://api.whatsapp.com/send?phone=543625293002&text=Hola,%20Bit!",
         "_blank"
       );
     } else {
