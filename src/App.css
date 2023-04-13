@@ -76,3 +76,9 @@ input:focus {
   color: black !important;
   width: 90% !important;
 }
+
+@media (min-width: 1024px) {
+  .shares {
+    display: none;
+  }
+}

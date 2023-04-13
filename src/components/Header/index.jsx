@@ -27,7 +27,7 @@ export default function Header() {
       <Card style={styles.headerContainerImg}>
         <img src={Logo} style={styles.headerImg} />
       </Card>
-      <div style={styles.headerIconsContainer}>
+      <div style={styles.headerIconsContainer} className="shares">
         <div style={styles.headerIcons}>
           <ShareIcon sx={{ color: "#fff" }} onClick={nativeShare} id="Share" />
         </div>
