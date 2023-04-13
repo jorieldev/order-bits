@@ -23,7 +23,7 @@ export default function Header() {
   };
   return (
     <Card style={styles.headerContainer}>
-      <div style={styles.headerCircle} />
+      <div style={styles.headerCircle} className="circle" />
       <Card style={styles.headerContainerImg}>
         <img src={Logo} style={styles.headerImg} />
       </Card>

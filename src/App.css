@@ -78,7 +78,8 @@ input:focus {
 }
 
 @media (min-width: 1024px) {
-  .shares {
-    display: none;
+  .shares,
+  .circle {
+    display: none !important;
   }
 }
