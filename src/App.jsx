@@ -22,13 +22,9 @@ function App() {
   const handleSubmit = async () => {
     setLoading(true);
     setError(false);
-    const ordersAll = await api.orders.fetch();
+    const ordersOne = await api.orders.fetch(order);
     if (order !== "") {
-      setInf(
-        (await ordersAll?.filter((o) => o.Orden === order)[0]) ?? {
-          Tematica: "No existe este pedido",
-        }
-      );
+      setInf(ordersOne !== undefined ? ordersOne : { Tematica: "ERROR" });
     } else {
       error(true);
     }
@@ -94,7 +90,7 @@ function App() {
                   Buscar por número de orden
                 </Button>
               </>
-            ) : inf.Tematica !== "No existe este pedido" ? (
+            ) : inf.Tematica !== "ERROR" ? (
               <CardFlotant inf={inf} handleBack={handleBack} />
             ) : (
               setError(true)
