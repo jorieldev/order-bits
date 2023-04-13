@@ -22,11 +22,12 @@ function App() {
   const handleSubmit = async () => {
     setLoading(true);
     setError(false);
-    const ordersOne = await api.orders.fetch(order);
     if (order !== "") {
+      const ordersOne = await api.orders.fetch(order);
       setInf(ordersOne !== undefined ? ordersOne : { Tematica: "ERROR" });
     } else {
-      error(true);
+      setError(true);
+      setInf({ Tematica: "ERROR" });
     }
   };
 
