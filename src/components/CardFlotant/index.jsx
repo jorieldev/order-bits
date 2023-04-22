@@ -41,7 +41,7 @@ const CardFlotant = ({ inf, handleBack }) => {
             {" "}
             {Horario
               ? `Se podra retirar en el horario de ${Horario}.`
-              : Envio
+              : Envio.toLowerCase() !== "no"
               ? "Cuenta con envio"
               : ""}
           </Typography>
