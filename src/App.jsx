@@ -12,7 +12,7 @@ function App() {
   const [inf, setInf] = useState();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-
+  const regex = new RegExp("^[0-9]{0,5}$");
   useEffect(() => {
     if (inf) {
       setLoading(false);
@@ -22,7 +22,8 @@ function App() {
   const handleSubmit = async () => {
     setLoading(true);
     setError(false);
-    if (order !== "") {
+    const isValid = regex.test(order) && order !== "";
+    if (isValid) {
       const ordersOne = await api.orders.fetch(order);
       setInf(ordersOne !== undefined ? ordersOne : { Tematica: "ERROR" });
     } else {
@@ -58,15 +59,27 @@ function App() {
                   style={{ paddingBottom: "50px" }}
                 >
                   <input
-                    type="number"
                     name="order"
-                    pattern="[0-9]+"
-                    maxLength="5"
-                    onChange={(event) =>
-                      setOrder(() =>
-                        event.target.value?.match(/[1-9]/g)?.join("")
-                      )
-                    }
+                    autoComplete="off"
+                    inputMode="numeric"
+                    min="1"
+                    max="99999"
+                    maxLength={5}
+                    onChange={(event) => {
+                      const inputValue = event.target.value
+                        .replace(/-/g, "")
+                        .replace(/[a-zA-Z]+/g, "")
+                        .replace(/[\^*@!"#$%&/()=?¡!¿;:><,|}{'_.\\]/gi, "");
+                      const isValid =
+                        inputValue !== "" && regex.test(inputValue);
+                      const blankValid =
+                        order?.length > 1 && inputValue.length < 0;
+                      isValid
+                        ? setOrder(inputValue)
+                        : blankValid
+                        ? setOrder(order)
+                        : setOrder("");
+                    }}
                     value={order}
                   />
                 </CardContent>
