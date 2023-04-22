@@ -41,7 +41,9 @@ const CardFlotant = ({ inf, handleBack }) => {
             {" "}
             {Horario
               ? `Se podra retirar en el horario de ${Horario}.`
-              : "Cuenta con envio"}
+              : Envio
+              ? "Cuenta con envio"
+              : ""}
           </Typography>
         )}
         <Button variant="contained" onClick={handleBack}>
