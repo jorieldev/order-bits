@@ -11,6 +11,7 @@ const CardFlotant = ({ inf, handleBack }) => {
     Finalizado,
     Envio,
     Horario,
+    Haciendo,
   } = inf;
   return (
     <>
@@ -19,9 +20,9 @@ const CardFlotant = ({ inf, handleBack }) => {
           {Tematica}
         </h2>
         <Typography variant="h6" component="h6" style={{ color: "#e6d5b8" }}>
-          {Finalizado === "NO"
-            ? `Se estan creando ${Cantidad} ${LlaverosImanesCentros} con una fecha estimada de entrega ${FechaEntrega}`
-            : `Estan creados ${Cantidad}  ${LlaverosImanesCentros}, se termino el día ${FechaEntrega}`}
+          Tu pedido es de {LlaverosImanesCentros} con una cantidad de:{" "}
+          {Cantidad}
+          {Haciendo} con una fecha estimada {FechaEntrega}
         </Typography>
         <Typography
           variant="h6"
