@@ -17,11 +17,9 @@ const CardFlotant = ({ inf, handleBack }) => {
     <>
       <CardContent sx={{ flex: "1 0 auto" }} style={{ paddingBottom: "50px" }}>
         <h2 style={{ color: "#e6d5b8", padding: "40px 20px 10" }}>
-          {Tematica}
+          {`${Cantidad} ${LlaverosImanesCentros} de ${Tematica}`}
         </h2>
         <Typography variant="h6" component="h6" style={{ color: "#e6d5b8" }}>
-          Tu pedido es de {LlaverosImanesCentros} con una cantidad de:{" "}
-          {Cantidad}
           {Haciendo} con una fecha estimada {FechaEntrega}
         </Typography>
         <Typography
