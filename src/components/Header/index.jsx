@@ -16,7 +16,7 @@ export default function Header() {
       );
     } else {
       window.open(
-        "whatsapp://send?text=https://order-bits.vercel.app/",
+        "whatsapp://send?text=https://tupedido-bit.vercel.app/",
         "_blank"
       );
     }
