@@ -10,11 +10,11 @@ const api = {
     postOrders: async (order) => {
       const formData = new FormData();
       formData.append("Id", order);
-      fetch(import.meta.env.STATICS_KEY, {
+      fetch(import.meta.env.VITE_STATICS_KEY, {
         method: "POST",
         body: formData,
       })
-        .then((res) => res.json())
+        .then()
         .catch((error) => {
           console.log(error);
         });
