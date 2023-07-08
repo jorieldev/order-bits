@@ -25,6 +25,7 @@ function App() {
     const isValid = regex.test(order) && order !== "";
     if (isValid) {
       const ordersOne = await api.orders.fetch(order);
+      await api.statics.postOrders(order);
       setInf(ordersOne !== undefined ? ordersOne : { Tematica: "ERROR" });
     } else {
       setError(true);

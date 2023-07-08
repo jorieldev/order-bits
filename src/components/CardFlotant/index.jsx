@@ -12,6 +12,7 @@ const CardFlotant = ({ inf, handleBack }) => {
     Envio,
     Horario,
     Haciendo,
+    Nombre,
   } = inf;
   return (
     <>
@@ -43,6 +44,7 @@ const CardFlotant = ({ inf, handleBack }) => {
               : Envio.toLowerCase() !== "no"
               ? "Cuenta con envio"
               : ""}
+            Datos: {Nombre}
           </Typography>
         )}
         <Button variant="contained" onClick={handleBack}>

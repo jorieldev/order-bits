@@ -6,6 +6,20 @@ const api = {
       return JSON.parse(data)[0];
     },
   },
+  statics: {
+    postOrders: async (order) => {
+      const formData = new FormData();
+      formData.append("Id", order);
+      fetch(import.meta.env.STATICS_KEY, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  },
 };
 
 export default api;
