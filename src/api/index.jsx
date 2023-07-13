@@ -9,15 +9,14 @@ const api = {
   statics: {
     postOrders: async (order) => {
       const formData = new FormData();
-      formData.append("Id", order);
       const today = new Date();
       const now = today.toLocaleDateString("en-US");
-      formData.append("Fecha", now);
+      formData.append("Id", `${order}-${now}`);
       fetch(import.meta.env.VITE_STATICS_KEY, {
         method: "POST",
         body: formData,
       })
-        .then()
+        .then(console.log(formData))
         .catch((error) => {
           console.log(error);
         });
