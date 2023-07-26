@@ -12,12 +12,22 @@ function App() {
   const [inf, setInf] = useState();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [colorPhase, setColorPhase] = useState({ color: "#e6d5b8" });
   const regex = new RegExp("^[0-9]{0,5}$");
   useEffect(() => {
     if (inf) {
       setLoading(false);
     }
   }, [inf]);
+
+  useEffect(() => {
+    const themeColor = window?.matchMedia(
+      "(prefers-color-scheme: dark)"
+    )?.matches;
+    setColorPhase({
+      color: themeColor ? "#e6d5b8" : "rgb(190 159 105)",
+    });
+  }, []);
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -52,7 +62,7 @@ function App() {
           <>
             {!inf || error ? (
               <>
-                <h2 style={{ color: "#e6d5b8", padding: "20px 20px 0" }}>
+                <h2 style={{ ...colorPhase, padding: "20px 20px 0" }}>
                   ¿Querés saber cómo va tu pedido?
                 </h2>
                 <CardContent
@@ -112,6 +122,14 @@ function App() {
             )}
           </>
         )}
+        <a
+          href="https://cafecito.app/jorieldev"
+          rel="noopener"
+          target="_blank"
+          className="footer"
+        >
+          Joriel ©
+        </a>
       </Card>
     </Card>
   );

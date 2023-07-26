@@ -1,4 +1,5 @@
 import React from "react";
+const { useEffect, useState } = React;
 import Logo from "../../assets/logoCute.png";
 import headerStyles from "./header.jsx";
 import { Card } from "@mui/material";
@@ -7,6 +8,13 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function Header() {
   const styles = headerStyles();
+  const [colorIcons, setColorIcons] = useState({ color: "#fff" });
+  useEffect(() => {
+    const theme = window?.matchMedia("(prefers-color-scheme: dark)")?.matches;
+    setColorIcons({
+      color: theme ? "#fff" : "#000",
+    });
+  }, []);
   const nativeShare = (e) => {
     e.preventDefault();
     if (e.target.id !== "Share") {
@@ -29,14 +37,10 @@ export default function Header() {
       </Card>
       <div style={styles.headerIconsContainer} className="shares">
         <div style={styles.headerIcons}>
-          <ShareIcon sx={{ color: "#fff" }} onClick={nativeShare} id="Share" />
+          <ShareIcon sx={colorIcons} onClick={nativeShare} id="Share" />
         </div>
         <div style={styles.headerIcons}>
-          <WhatsAppIcon
-            sx={{ color: "#fff" }}
-            id="WhatsApp"
-            onClick={nativeShare}
-          />
+          <WhatsAppIcon sx={colorIcons} id="WhatsApp" onClick={nativeShare} />
         </div>
       </div>
     </Card>

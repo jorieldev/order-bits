@@ -55,6 +55,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.footer {
+  color: rgb(230, 213, 184, 0.9);
+}
+.footer:hover {
+  color: rgb(230, 213, 184, 0.9);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -66,4 +73,16 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+  .footer {
+    color: #e6d5b8;
+  }
+  .footer:hover {
+    color: #e6d5b8;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 6px;
+  left: 45%;
 }
