@@ -27,8 +27,6 @@ function App() {
     setColorPhase({
       color: themeColor ? "#e6d5b8" : "rgb(190 159 105)",
     });
-    const dashboard = await api.getDashboard.fetch();
-    console.log("dashboard", dashboard);
   }, []);
 
   const handleSubmit = async () => {
@@ -39,6 +37,8 @@ function App() {
       const ordersOne = await api.orders.fetch(order);
       await api.statics.postOrders(order);
       setInf(ordersOne !== undefined ? ordersOne : { Tematica: "ERROR" });
+      const dashboard = await api.getDashboard.fetch();
+      console.log("dashboard", dashboard);
     } else {
       setError(true);
       setInf({ Tematica: "ERROR" });
