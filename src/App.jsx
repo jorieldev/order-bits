@@ -28,7 +28,7 @@ function App() {
       color: themeColor ? "#e6d5b8" : "rgb(190 159 105)",
     });
     const dashboard = await api.getDashboard.fetch();
-    console.log("dashboard", dashboard);
+    console.log("Pedidos,proximamente dashboard:", dashboard);
   }, []);
 
   const handleSubmit = async () => {
