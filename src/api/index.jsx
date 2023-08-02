@@ -22,6 +22,15 @@ const api = {
         });
     },
   },
+  getDashboard: {
+    fetch: async () => {
+      const resp = await fetch(
+        `${import.meta.env.VITE_API_DASHBOARD_KEY}${order}`
+      );
+      const data = await resp.text();
+      return JSON.parse(data);
+    },
+  },
 };
 
 export default api;

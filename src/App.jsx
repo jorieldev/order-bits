@@ -20,13 +20,15 @@ function App() {
     }
   }, [inf]);
 
-  useEffect(() => {
+  useEffect(async () => {
     const themeColor = window?.matchMedia(
       "(prefers-color-scheme: dark)"
     )?.matches;
     setColorPhase({
       color: themeColor ? "#e6d5b8" : "rgb(190 159 105)",
     });
+    const dashboard = await api.getDashboard.fetch();
+    console.log("dashboard", dashboard);
   }, []);
 
   const handleSubmit = async () => {
