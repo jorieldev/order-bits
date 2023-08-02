@@ -1,5 +1,6 @@
 import React from "react";
 const { useEffect, useState } = React;
+import api from "../../api";
 import Logo from "../../assets/logoCute.png";
 import headerStyles from "./header.jsx";
 import { Card } from "@mui/material";
@@ -8,12 +9,24 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 export default function Header() {
   const styles = headerStyles();
+  const [dataDashboard, setDataDashboard] = useState();
   const [colorIcons, setColorIcons] = useState({ color: "#fff" });
   useEffect(() => {
     const theme = window?.matchMedia("(prefers-color-scheme: dark)")?.matches;
     setColorIcons({
       color: theme ? "#fff" : "#000",
     });
+    async function fetchData() {
+      try {
+        // const dashboard = await api.getDashboard.fetch();
+        // const dashboard = { Process: 2, Done: 3 };
+        // setDataDashboard(dashboard);
+        console.log("SE VIENEN COSITAS NUEVAS (:");
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    fetchData();
   }, []);
   const nativeShare = (e) => {
     e.preventDefault();
