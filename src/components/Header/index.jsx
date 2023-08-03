@@ -18,10 +18,9 @@ export default function Header() {
     });
     async function fetchData() {
       try {
-        // const dashboard = await api.getDashboard.fetch();
-        // const dashboard = { Process: 2, Done: 3 };
-        // setDataDashboard(dashboard);
-        console.log("SE VIENEN COSITAS NUEVAS (:");
+        const dashboard = await api.getDashboard.fetch();
+        dashboard.Year = "2022-2023";
+        setDataDashboard(dashboard);
       } catch (e) {
         console.error(e);
       }
@@ -47,6 +46,17 @@ export default function Header() {
       <div style={styles.headerCircle} className="circle" />
       <Card style={styles.headerContainerImg}>
         <img src={Logo} style={styles.headerImg} />
+        {dataDashboard && (
+          <div style={styles.headerDashboard}>
+            <div style={styles.headerDashboardText}>
+              +{dataDashboard.Process} pedidos en proceso 🕟
+            </div>
+            <div>
+              +{dataDashboard.Done} pedidos terminados en {dataDashboard.Year}{" "}
+              🤩
+            </div>
+          </div>
+        )}
       </Card>
       <div style={styles.headerIconsContainer} className="shares">
         <div style={styles.headerIcons}>

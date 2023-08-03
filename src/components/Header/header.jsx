@@ -51,6 +51,26 @@ function headerStyles() {
     zIndex: "99",
   };
 
+  const headerDashboard = {
+    display: "flex",
+    flexDirection: "column",
+    width: "auto",
+    height: "inherit",
+    fontSize: "large",
+    marginLeft: "-7rem",
+    justifyContent: "center",
+    zIndex: 2,
+    fontWeight: 800,
+    lineHeight: "25px",
+    textAlign: "initial",
+    color: "#1c2b2d",
+    maxWidth: "260px",
+  };
+
+  const headerDashboardText = {
+    paddingTop: "6rem",
+  };
+
   return {
     headerContainer,
     headerContainerImg,
@@ -58,6 +78,8 @@ function headerStyles() {
     headerCircle,
     headerIconsContainer,
     headerIcons,
+    headerDashboard,
+    headerDashboardText,
   };
 }
 
