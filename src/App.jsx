@@ -138,7 +138,7 @@ function App() {
         {dataDashboard && (
           <div style={styles.headerDashboard}>
             <div>+{dataDashboard.Process} pedidos en proceso 🕟</div>
-            <div>+{dataDashboard.Done} pedidos terminados en 🤩</div>
+            <div>+{dataDashboard.Done} pedidos terminados 🤩 en </div>
             <div>{dataDashboard.Year}</div>
           </div>
         )}

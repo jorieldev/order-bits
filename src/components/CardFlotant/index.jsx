@@ -16,7 +16,7 @@ const CardFlotant = ({ inf, handleBack }) => {
   } = inf;
   return (
     <>
-      <CardContent sx={{ flex: "1 0 auto" }} style={{ paddingBottom: "50px" }}>
+      <CardContent sx={{ flex: "1 0 auto" }} style={{ paddingBottom: 0 }}>
         <h2 style={{ color: "#e6d5b8", padding: "40px 20px 10" }}>
           {`${Cantidad} ${LlaverosImanesCentros} de ${Tematica}`}
         </h2>
