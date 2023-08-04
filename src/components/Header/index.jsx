@@ -18,9 +18,9 @@ export default function Header() {
     });
     async function fetchData() {
       try {
-        const dashboard = await api.getDashboard.fetch();
-        dashboard.Year = "2022-2023";
-        setDataDashboard(dashboard);
+        const { dashboard } = await api.getDashboard.fetch();
+        const dataNew = { ...dashboard, Year: "2022-2023" };
+        setDataDashboard(dataNew);
       } catch (e) {
         console.error(e);
       }
