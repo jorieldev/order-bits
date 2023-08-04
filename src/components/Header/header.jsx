@@ -57,7 +57,7 @@ function headerStyles() {
     width: "auto",
     height: "inherit",
     fontSize: "large",
-    marginLeft: "-19rem",
+    marginLeft: "-22rem",
     justifyContent: "flex-end",
     zIndex: 2,
     fontWeight: 800,
