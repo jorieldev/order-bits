@@ -65,8 +65,7 @@ function headerStyles() {
     textAlign: "initial",
     color: "#1c2b2d",
     maxWidth: "260px",
-    textShadow:
-      "linear-gradient(0deg, rgba(230,213,184,0) 0%, rgba(230,213,184,1) 100%)",
+    textShadow: "rgba(230,213,184) 1px 1px",
   };
 
   const headerDashboardText = {
