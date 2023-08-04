@@ -51,10 +51,10 @@ export default function Header() {
             <div style={styles.headerDashboardText}>
               +{dataDashboard.Process} pedidos en proceso 🕟
             </div>
-            <div>
-              +{dataDashboard.Done} pedidos terminados en {dataDashboard.Year}{" "}
-              🤩
+            <div style={styles.headerDashBoardText}>
+              +{dataDashboard.Done} pedidos terminados en 🤩
             </div>
+            <div style={styles.headerDashBoardText}>{dataDashboard.Year}</div>
           </div>
         )}
       </Card>

@@ -57,14 +57,14 @@ function headerStyles() {
     width: "auto",
     height: "inherit",
     fontSize: "large",
-    marginLeft: "-10rem",
-    justifyContent: "center",
+    marginLeft: "-19rem",
+    justifyContent: "flex-end",
     zIndex: 2,
     fontWeight: 800,
     lineHeight: "25px",
     textAlign: "initial",
     color: "#1c2b2d",
-    maxWidth: "260px",
+    maxWidth: "34vh",
     textShadow: "rgba(230,213,184) 1px 1px",
   };
 
@@ -72,7 +72,12 @@ function headerStyles() {
     paddingTop: "6rem",
   };
 
+  const headerDashBoardText = {
+    textAlign: "center",
+  };
+
   return {
+    headerDashBoardText,
     headerContainer,
     headerContainerImg,
     headerImg,
