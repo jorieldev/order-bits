@@ -54,30 +54,12 @@ function headerStyles() {
   const headerDashboard = {
     display: "flex",
     flexDirection: "column",
-    width: "auto",
-    height: "inherit",
-    fontSize: "large",
-    marginLeft: "-22rem",
-    justifyContent: "flex-end",
-    zIndex: 2,
-    fontWeight: 800,
-    lineHeight: "25px",
-    textAlign: "initial",
-    color: "#1c2b2d",
-    maxWidth: "34vh",
-    textShadow: "rgba(230,213,184) 1px 1px",
-  };
-
-  const headerDashboardText = {
-    paddingTop: "6rem",
-  };
-
-  const headerDashBoardText = {
-    textAlign: "center",
+    color: "rgba(230,213,184)",
+    textShadow: "#1c2b2d 1px 1px",
+    paddingTop: "1rem",
   };
 
   return {
-    headerDashBoardText,
     headerContainer,
     headerContainerImg,
     headerImg,
@@ -85,7 +67,6 @@ function headerStyles() {
     headerIconsContainer,
     headerIcons,
     headerDashboard,
-    headerDashboardText,
   };
 }
 

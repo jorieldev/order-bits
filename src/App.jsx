@@ -6,6 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Header from "./components/Header";
 import CardFlotant from "./components/CardFlotant";
 import Loading from "./components/Loading";
+import headerStyles from "./components/Header/header";
 
 function App() {
   const [order, setOrder] = useState("");
@@ -13,7 +14,9 @@ function App() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [colorPhase, setColorPhase] = useState({ color: "#e6d5b8" });
+  const [dataDashboard, setDataDashboard] = useState();
   const regex = new RegExp("^[0-9]{0,5}$");
+  const styles = headerStyles();
   useEffect(() => {
     if (inf) {
       setLoading(false);
@@ -27,6 +30,16 @@ function App() {
     setColorPhase({
       color: themeColor ? "#e6d5b8" : "rgb(190 159 105)",
     });
+    async function fetchData() {
+      try {
+        const { dashboard } = await api.getDashboard.fetch();
+        const dataNew = { ...dashboard, Year: "2022-2023" };
+        setDataDashboard(dataNew);
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    fetchData();
   }, []);
 
   const handleSubmit = async () => {
@@ -121,6 +134,13 @@ function App() {
               setError(true)
             )}
           </>
+        )}
+        {dataDashboard && (
+          <div style={styles.headerDashboard}>
+            <div>+{dataDashboard.Process} pedidos en proceso 🕟</div>
+            <div>+{dataDashboard.Done} pedidos terminados en 🤩</div>
+            <div>{dataDashboard.Year}</div>
+          </div>
         )}
         <a
           href="https://cafecito.app/jorieldev"
